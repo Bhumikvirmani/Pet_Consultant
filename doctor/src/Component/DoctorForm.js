@@ -49,17 +49,17 @@ const DoctorForm = () => {
   return (
     <div className='addproduct'>
       <div className='addproduct-itemfield'>
-        <p>Product title</p>
-        <input value={productDetails.name} onChange={changeHandler}type='text' name='name' placeholder='Product name'/>
+        <p>Doctor Name</p>
+        <input value={productDetails.name} onChange={changeHandler}type='text' name='name' placeholder='Doctor name'/>
       </div>
       <div className='addproduct-price'>
         <div className='addproduct-itemfield'>
-          <p>Price</p>
-          <input value={productDetails.Clinic} onChange={changeHandler} type='text' name='Clinic' placeholder='Type here'/>
+          <p>Clinic Address</p>
+          <input value={productDetails.Clinic} onChange={changeHandler} type='text' name='Clinic' placeholder='Clinic Address'/>
         </div>
       </div>
       <div className='addproduct-itemfield'>
-        <p>Product Category</p>
+        <p>Doctor Specialist</p>
         <select value={productDetails.category} onChange={changeHandler} name='category' className='add-product-selector'>
           <option value="Dog">Dog</option>
           <option value="Cat">Cat</option>
