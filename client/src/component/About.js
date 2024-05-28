@@ -13,21 +13,13 @@ const About = () => {
             <div className='col-md-6'>
               <div className='profile-head'>
                 <h5>bhumik virmani</h5>
-                <h6>web development</h6>
-                
-
+                <h6>web development </h6>
               </div>
-
             </div>
-          
           </div>
-  
-        </form>
-        
-        
+        </form> 
       </div>
     </>
-    
   )
 }
 
