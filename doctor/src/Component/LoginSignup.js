@@ -1,14 +1,15 @@
 import React, { useState } from 'react'
-import '../Pages/LoginSignup.css'
+// import '../Pages/LoginSignup.css'
+import './LoginSignup.css'
 const LoginSignup = () => {
 
   const [state,setState]= useState("Login");
 
   const [formData,setFormData] = useState({
-    patientname:"",
+    doctorname:"",
     email:"",
     password:""
-  });
+  })
 
   const changeHandler = (e)=>{
     setFormData({...formData,[e.target.name]:e.target.value})
@@ -16,7 +17,7 @@ const LoginSignup = () => {
   const login = async ()=>{
     let responseData;
     console.log("Login function works",formData);
-    await fetch('http://localhost:4000/login',{
+    await fetch('http://localhost:4000/Doctorlogin',{
       method:'POST',
         headers:{
           'Accept':'application/form-data',
@@ -36,7 +37,7 @@ const LoginSignup = () => {
   const signup = async ()=>{
     let responseData;
     console.log("signup function works",formData);
-    await fetch('http://localhost:4000/signup',{
+    await fetch('http://localhost:4000/Doctorsignup',{
       method:'POST',
         headers:{
           'Accept':'application/form-data',

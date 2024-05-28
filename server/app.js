@@ -7,16 +7,6 @@ const app = express();
 app.use(cors());
 
 
-// const cors = require('cors');
-// const corsOptions ={
-//     origin:'http://localhost:3000', 
-//     methods:"GET,POST,PUT,DELETE,PATCH,HEAD",
-//     credentials:true,            //access-control-allow-credentials:true
-//     optionSuccessStatus:200
-// }
-// app.use(cors(corsOptions));
-
-// dotenv.config({path:'./config.env'});
 
 const DB= `mongodb+srv://PetDoc:PetDoc100@cluster0.3ixtt9u.mongodb.net/patient?retryWrites=true&w=majority&appName=Cluster0`
 // `mongodb+srv://Pet_care:Pet_care100@cluster0.cnrenpk.mongodb.net/users?retryWrites=true&w=majority`;
@@ -60,6 +50,31 @@ app.get('/contact',(req,res)=>{
     res.cookie("Test",'example');
     res.send("this is contact");
 });
+
+app.post('/signup',async(req,res)=>{
+    let check =await User.findOne({email:req.body.email});
+    if(check){
+        return res.status(400).json({success:false,error:"this email id already exsist"});
+    }
+
+    const Users = new User({
+        name:req.body.Usersname,
+        mobile:req.body.mobile,
+        email: req.body.email,
+        password: req.body.password,
+        cpassword:req.body.cpassword
+    })
+
+    await Users.save();
+
+    const data = {
+        Users:{
+            id:Users.id
+        }
+    }
+    const token =jwt.sign(data,'secret_ecom');
+    res.json({success:true,token})
+})
 const PORT=2000;
 app.listen(PORT,()=>{
     console.log("server side is running");

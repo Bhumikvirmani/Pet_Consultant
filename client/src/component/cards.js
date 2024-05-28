@@ -1,10 +1,15 @@
 import React from 'react'
 import '../component/cards.css'
+import { Link } from 'react-router-dom';
 
-const ViewCards=({ title, description, imageUrl })=> {
+
+
+const ViewCards=({ title, description, imageUrl,to})=> {
   return (
-    <div className="view-card">
-      <img src={imageUrl} alt={title} className='img' />
+    <div className="view-card" >
+       <Link to={to}>
+        <img src={imageUrl} alt={title} className='img' />
+      </Link>
       <div className="view-card-info">
         <h5>{title}</h5>
         <p>{description}</p>
@@ -14,19 +19,4 @@ const ViewCards=({ title, description, imageUrl })=> {
 }
 
 export default ViewCards
-
-// import React from 'react';
-
-// const ViewCard = ({ title, description, imageUrl }) => {
-//   return (
-//     <div className="view-card">
-//       <img src={imageUrl} alt={title} />
-//       <div className="view-card-info">
-//         <h2>{title}</h2>
-//         <p>{description}</p>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default ViewCard;
+// onClick={'/DoctorDetails'}
