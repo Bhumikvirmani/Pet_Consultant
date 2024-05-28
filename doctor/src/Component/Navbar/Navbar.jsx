@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <div className='navbar'>
         <img className="nav-logo" src={navlogo} alt=''/>
-        <p>Shoppers admin panel</p>
+        <p>Doctor Panel</p>
         <img className= "nav-profile" src={cart} alt=''/>
         <div className='nav-login-cart'>
             {localStorage.getItem('auth-token')?
