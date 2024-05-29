@@ -16,7 +16,7 @@ const Hero = () => {
                 <p>for your pet</p>
             </div>
             <div className='hero-latest-btn'>
-                <h6>Take care of your pet health as its more loyal then humans</h6>
+                <h6>Take care of your pet health as its more loyal than humans</h6>
                 {/* <div>Latest Collection</div> */}
                 {/* <img className='womenok' src={womenok}alt=''/> */}
             </div>

@@ -30,12 +30,11 @@ const Home = () => {
         imageUrl={pet}
         to='bookAppointment'
         />
-
         <ViewCards
         title="Products"
         imageUrl={pet}
-        to='/Login'
-        />
+        to="http://localhost:3000/"
+        /> 
       </div>
     </section>
       
